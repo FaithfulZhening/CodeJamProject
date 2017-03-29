@@ -1,0 +1,145 @@
+<?php
+session_start();
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+	$_SESSION[ID] = $_POST['studentName'];
+	header("Location: http://cs.mcgill.ca/~zzhang348/studentPage.html");
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="icon" type="image/png" href="pic/McGillLogo.jpeg"/>
+	<meta charset='utf-8' />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+	.jumbotron{
+		color: #ef0404;
+		padding-top:10px;
+		padding-bottom: 10px;
+		
+		background: url("pic/mcgill3.jpg");
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+
+	}
+	h1{
+		padding-left:50px;
+		
+	}
+	.btn-primary, .btn{
+		padding: 10px;
+		margin: 20px;
+
+	}
+	.form-group{
+		padding: 10px;
+		margin: 20px;
+	}
+
+	.btn-info{
+		background-color: #e03535;
+		border-color: red;
+	}
+	.btn-info:hover{
+		background-color:#e51616;
+		border-color:none;
+	}
+	.btn-info:active, .btn-info:target, .btn-info:focus{
+		background-color:#e51616;
+		border-color:#e51616;
+	}
+	.btn-info:visited{
+		background-color:#e51616;
+		border-color:none;
+	}
+	.btn-primary{
+		background-color: #a00606;
+		border-color:none;
+
+	}
+	.btn-primary:hover{
+		background-color:#a80303;
+		border-color:rnone;
+	}
+	</style>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+		
+		<div class="jumbotron">
+			<h1>    Course Scheduling System </h1>
+		</div>
+
+		<!--Login Form-->
+		<div class="row" style = "width:80%; margin:auto;">
+			
+
+			
+
+				<button type="button" class="btn btn-info btn-block" id="student-btn" onmouseDown="mouseDown()" >Student Schedule</button>
+				
+				<form class="form-horizontal forms" method="post" >
+					<div class="form-group"  id='student-form' action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+						<label class="col-sm-3 control-label">    Student ID</label>
+						<div class="col-sm-6">
+
+							<input class="form-control" id="studentLogin" type="text" name = "studentName" >
+						</div>
+						<div class="row" style = "width:80%; margin:auto;">
+							
+							<div class="col-sm-6">
+								<button class="btn btn-primary btn-small" type="submit">Student Schedule</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			
+				
+		</div>
+
+		<div class="row" style = "width:80%; margin:auto;">
+			
+				<button type="button" class="btn btn-info btn-block" id="prof-btn" onmouseDown="mouseDown()" >Professor Schedule</button>
+
+				<form class="form-horizontal forms" method="post">
+					<div class="form-group" id='prof-form'>
+						<label class="col-sm-3 control-label">Professor Schedule</label>
+						<div class="col-sm-6">
+							<input class="form-control" id="profLogin" type="text" name = "ProfessorName">
+						</div>
+						<div class="row" style = "width:80%; margin:auto;">
+								
+							<div class="col-sm-6">
+								<a href="./prof_page.html" class="btn btn-primary btn-small" onmouseDown="mouseDown()" id="prof-schedule">Professor Schedule</a>
+							</div>
+						</div>
+					</div>
+					</form>
+				
+			</div>
+
+				
+			</div> <!--End Login Form-->
+		</div>
+
+	</div><!--End container -->
+
+	<!--external student_page.js-->
+	<script type = "text/javascript" src='js/login.js'></script>
+
+</body>
+</html>

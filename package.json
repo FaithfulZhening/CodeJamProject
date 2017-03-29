@@ -1,0 +1,26 @@
+{
+  "name": "courseSchedulingSys",
+  "version": "1.0.0",
+  "description": "courseSchedulingSys",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "deploy": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmolLi/CourseSchedulingSys.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmolLi/CourseSchedulingSys/issues"
+  },
+  "homepage": "https://github.com/EmolLi/CourseSchedulingSys#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "",
+    "express": "^4.14.0",
+    "formidable": "^1.0.17"
+  }
+}

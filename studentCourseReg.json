@@ -1,0 +1,50 @@
+{
+	"students": {
+		"1": {
+			"name": "CANDELARIO, AQUINO",
+			"classes": {
+				"101": {
+					"name": "Mathematics",
+					"time": {
+						"day": "Monday",
+						"start": "08:30am",
+						"end": "10:30am"
+					}
+				},
+				"102": {
+					"name": "Physics",
+					"time": {
+						"day": "Tuesday",
+						"start": "08:30am",
+						"end": "10:30am"
+					}
+				}
+
+			}
+		},
+		"2": {
+			"name": "Emol, Li",
+			"classes": {
+				"103": {
+					"name": "Comp",
+					"time": {
+						"day": "Monday",
+						"start": "09:30am",
+						"end": "11:30am"
+					}
+				},
+				"104": {
+					"name": "Music",
+					"time": {
+						"day": "Thursday",
+						"start": "10:30am",
+						"end": "12:30am"
+					}
+				}
+
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="pic/McGillLogo.jpeg"/>
+	<meta charset='utf-8' />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<!--Calendar API Stuff-->
+	<link href='lib/fullcalendar-3.0.1/fullcalendar.css' rel='stylesheet' />
+	<link href='lib/fullcalendar-3.0.1/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<script type = "text/javascript" src='lib/moment.js'></script>
+	<script type = "text/javascript" src='js/readjson.js'></script>
+	<script type = "text/javascript" src='lib/fullcalendar-3.0.1/fullcalendar.min.js'></script>
+
+	<!--Test CSS-->
+	<style>
+
+	body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+
+	#calendar {
+		max-width: 400px;
+		margin: 0 auto;
+	}
+
+	#headline{
+		background-image: url("./pic/mcgill5.jpg");
+		background-size: 40% 100%;
+		background-repeat:no-repeat;
+		background-position:center;
+
+	}
+	h2{
+		color:#e03535;
+	}
+
+	</style>
+
+</head>
+
+
+<body>
+	<div class="container">
+		<!--Div Row-->
+		<div class="row" id = "headline">
+			<div class="col-md-8" >
+				
+				<h2>Hello Professor</h2>
+			</div>
+			
+			<a href="./start.html" class="btn btn-small" style="float: right;">Log out</a>
+		</div>
+		<hr class="divider">
+		<!--End A Div Row-->
+		<div id = "hidden"></div>
+		<!--Div Row-->
+		<div class="row">
+			<!--column length 8-->
+			<div class="col-md-8">
+				<p><strong>Your Classes: </strong> </p>
+				<!--Collapse for course list-->
+				<div class="panel-group" id="course_list">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Mathematics MON 08:30-10:30</a>
+							</h4>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse">
+							<div class="panel-body"><table class="table table-condensed table-striped">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Student ID</th>
+									</tr>
+								</thead>
+								<tbody id="c1">
+								</tbody>
+							</table></div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Mathematics TUES 08:00-10:00</a>
+							</h4>
+						</div>
+						<div id="collapse2" class="panel-collapse collapse">
+							<div class="panel-body">
+							<table class="table table-condensed table-striped">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Student ID</th>
+									</tr>
+								</thead>
+								<tbody id="c2">
+								</tbody>
+							</table></div>
+							</div>
+						</div>
+
+					</div>
+					<!--End Collapse for course list-->
+				</div>   <!--End column length 8-->
+				<!--Column length 4: small calendar-->
+				<div class = "col-md-4" id = "calendars">
+					<div id='calendar'></div>
+
+				</div> <!--End Column length 4: small calendar-->
+
+			</div>  <!--End a Div Row-->
+
+		</div>
+		<!--Container end-->
+	</body>
+
+	<!--external student_page.js-->
+	<script type = "text/javascript" src='js/prof_page.js'></script>
+
+	</html>

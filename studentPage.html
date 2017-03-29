@@ -1,0 +1,102 @@
+<?php
+   session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="pic/McGillLogo.jpeg"/>
+	<meta charset='utf-8' />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<!--Calendar API Stuff-->
+	<link href='lib/fullcalendar-3.0.1/fullcalendar.css' rel='stylesheet' />
+	<link href='lib/fullcalendar-3.0.1/fullcalendar.print.css' rel='stylesheet' media='print' />
+	<script type = "text/javascript" src='lib/moment.js'></script>
+	<script type = "text/javascript" src='js/readjson.js'></script>
+	<script type = "text/javascript" src='lib/fullcalendar-3.0.1/fullcalendar.min.js'></script>
+
+	<!--Test CSS-->
+	<style>
+
+	body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+
+	#c1, #c2, #c3, #c4, #c5 {
+		display: none;
+	}
+	#calendar {
+		max-width: 400px;
+		margin: 0 auto;
+	}
+	
+	h2{
+		color:#e03535;
+	}
+
+	</style>
+
+</head>
+
+
+<body>
+<script type="text/javascript">
+	var StudentId = "<?php echo $_SESSION[ID]; ?>";
+	
+</script>
+	<div class="container"> 
+	<div  id=studentID style="display:none;"><?php echo $_SESSION[ID] ?></div>  
+		<!--Div Row-->
+		<div class="row" id="headline">
+			<div class="col-md-8">
+				<?php
+				  print "<h2>Hello $_SESSION[ID]</h2>";
+				?>
+			</div>
+			<form action = "logout.php">
+			<input type = "submit" value = "Log out"/>
+		
+			</form>	
+		</div>
+		<hr class="divider">
+		<!--End A Div Row-->
+		<div id = "hidden"></div>
+		<!--Div Row-->
+		<div class="row">
+			<!--column length 8-->
+			<div class="col-md-8">
+				<p><strong>Classes Registered:</strong> </p>
+				<!--Collapse for course list-->
+				<div class="panel-group" id="course_list">
+					
+
+				</div>
+					<!--End Collapse for course list-->
+				</div>   <!--End column length 8-->
+				<!--Column length 4: small calendar-->
+				<div class = "col-md-4" id = "calendars">
+					<div id='calendar'></div>
+					<button type="button" class="btn btn-link" id="big-calendar">Click for a more detailed calendar</button>
+					<button type="button" class="btn btn-link" id="calendar-show">Hide calendar</button>
+				</div> <!--End Column length 4: small calendar-->
+
+			</div>  <!--End a Div Row-->
+
+		</div>
+		<!--Container end-->
+	</body>
+
+	<!--external student_page.js-->
+	<script type = "text/javascript" src='js/student_page.js'></script>
+
+	</html>
